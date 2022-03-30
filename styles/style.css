@@ -50,6 +50,12 @@ header .nav-list li a {
   cursor: pointer;
   color: #303030;
   font-size: 1rem;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+header .nav-list li:hover {
+  text-shadow: 2px 2px 6px rgba(11, 20, 123, 0.796);
 }
 
 header .nav-list :last-child a {
@@ -244,11 +250,12 @@ header .toggle-menu .myPay-button a {
 #show-more-menu ul li {
   margin: 0;
   padding: 10px 20px;
-  font-size: .8rem;
   color: #303030;
 }
 
 #show-more-menu ul li a {
+  font-size: .8rem;
+  font-weight: 400;
   background-color: transparent;
 }
 
@@ -293,6 +300,8 @@ header .toggle-menu .myPay-button a {
 
 #show-product-menu .product-list ul li a {
   background-color: transparent;
+  font-size: .8rem;
+  font-weight: 400;
 }
 
 #show-product-menu .product-list ul li a:hover {
@@ -637,11 +646,10 @@ main .main-container .txt-section .links-section a img {
 
 footer {
   border-top: 5px solid #23274c52;
-  text-align: center;
 }
 
 footer h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #0d114ec2;
   margin-bottom: 2rem;
 }
@@ -657,22 +665,30 @@ footer h3 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  footer .service-lists {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    width: calc(100%-330px);
+    margin: auto;
+    padding: 0 10px;
   }
 }
 
 @media (min-width: 768px) {
   footer .service-lists {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 80%;
-    padding-right: 1rem;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    width: calc(100%-120px);
+    padding: 0 10px;
   }
 }
 
@@ -688,6 +704,7 @@ footer .service-lists .list ul {
 footer .service-lists .list ul li {
   font-size: 1rem;
   color: #7786b1;
+  padding: 8px 0;
 }
 
 @media (min-width: 768px) {
@@ -698,6 +715,7 @@ footer .service-lists .list ul li {
 
 footer .social-media {
   margin: 1rem 0;
+  text-align: center;
 }
 
 footer .social-media ul {
@@ -710,19 +728,45 @@ footer .social-media ul {
           justify-content: center;
 }
 
-footer .social-media ul img {
-  width: 38px;
-  height: 42px;
-}
-
-footer .social-media ul img.img-margin {
-  margin: 0 .5rem;
+footer .social-media ul a {
+  background-color: #eff4fe;
+  width: 45px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  margin-left: 15px;
 }
 
 @media (min-width: 768px) {
   footer .social-media {
-    width: 20%;
-    padding: 0 .5rem;
+    width: 330px;
+    padding: 0 30px;
   }
+}
+
+.bell {
+  background-color: #06aafb;
+  -webkit-box-shadow: 2px 2px 8px #21254e, -2px -2px 8px #e0f9fd;
+          box-shadow: 2px 2px 8px #21254e, -2px -2px 8px #e0f9fd;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 7px 10px;
+  border-radius: 50%;
+  position: fixed;
+  left: 1.2rem;
+  bottom: 1.2rem;
+}
+
+.bell img {
+  width: 42px;
 }
 /*# sourceMappingURL=style.css.map */

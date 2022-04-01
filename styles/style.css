@@ -36,16 +36,26 @@ header .logo img {
   width: 120px;
 }
 
-header .nav-list {
+header nav .nav-list {
   display: none;
 }
 
-header .nav-list li {
+@media (min-width: 768px) {
+  header nav .nav-list {
+    display: inline;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+  }
+}
+
+header nav .nav-list li {
   font-size: 14px;
   margin: 0 15px;
 }
 
-header .nav-list li a {
+header nav .nav-list li a {
   text-decoration: none;
   cursor: pointer;
   color: #303030;
@@ -54,11 +64,11 @@ header .nav-list li a {
   transition: all .3s;
 }
 
-header .nav-list li:hover {
+header nav .nav-list li:hover {
   text-shadow: 2px 2px 6px rgba(11, 20, 123, 0.796);
 }
 
-header .nav-list :last-child a {
+header nav .nav-list .last-child a {
   color: #28457b;
   background-color: rgba(232, 239, 254, 0.6);
   border-radius: 1rem;
@@ -69,37 +79,27 @@ header .nav-list :last-child a {
   transition: all .3s;
 }
 
-header .nav-list :last-child a:hover {
+header nav .nav-list .last-child a:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#21254e), to(#2b4e83));
   background: linear-gradient(180deg, #21254e, #2b4e83);
   color: #fff;
 }
 
 @media (max-width: 990px) {
-  header .nav-list :last-child a {
+  header nav .nav-list .last-child a {
     display: none;
   }
 }
 
-header .nav-list .more-menu {
+header nav .nav-list .more-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .nav-list .more-menu img {
+header nav .nav-list .more-menu img {
   width: 8px;
   margin-left: 8px;
-}
-
-@media (min-width: 768px) {
-  header .nav-list {
-    display: inline;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    list-style: none;
-  }
 }
 
 header .hamburger-icon {
@@ -118,7 +118,7 @@ header .toggle-menu {
   right: 0;
   background-color: rgba(201, 213, 223, 0.9);
   z-index: 1;
-  width: 100%;
+  width: 50%;
   text-align: right;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -126,7 +126,7 @@ header .toggle-menu {
 
 header .toggle-menu .cross-icon {
   width: 90%;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   margin: auto;
 }
 
@@ -146,12 +146,12 @@ header .toggle-menu .toggle-menu-list ul {
 header .toggle-menu .toggle-menu-list ul a {
   text-decoration: none;
   display: inline-block;
-  color: #303030;
+  color: #001a4f;
   padding: .5rem 0;
 }
 
 header .toggle-menu .toggle-menu-list ul div {
-  background-color: #e3dfe4;
+  background-color: #005ea0;
   height: 2px;
   margin: 8px 0;
 }
@@ -182,8 +182,8 @@ header .toggle-menu .myPay-button a {
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
   100% {
     opacity: 1;
@@ -195,8 +195,8 @@ header .toggle-menu .myPay-button a {
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
   100% {
     opacity: 1;
@@ -235,7 +235,7 @@ header .toggle-menu .myPay-button a {
 #show-more-menu ul {
   background-color: rgba(235, 235, 235, 0.8);
   position: absolute;
-  top: 18px;
+  top: 1px;
   left: -45px;
   border-top: 5px solid #28457b;
   border-radius: 10px;
@@ -250,10 +250,10 @@ header .toggle-menu .myPay-button a {
 #show-more-menu ul li {
   margin: 0;
   padding: 10px 20px;
-  color: #303030;
 }
 
 #show-more-menu ul li a {
+  color: #303030;
   font-size: .8rem;
   font-weight: 400;
   background-color: transparent;
@@ -261,6 +261,8 @@ header .toggle-menu .myPay-button a {
 
 #show-more-menu ul li a:hover {
   background-color: rgba(232, 239, 254, 0.6);
+  padding: .2rem .5rem;
+  border-radius: 10px;
 }
 
 #show-product-menu {
@@ -269,7 +271,7 @@ header .toggle-menu .myPay-button a {
 
 #show-product-menu .product-list {
   position: absolute;
-  top: 38px;
+  top: 22px;
   left: -105px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,10 +297,10 @@ header .toggle-menu .myPay-button a {
   margin: 0;
   padding: 10px 20px;
   font-size: .8rem;
-  color: #303030;
 }
 
 #show-product-menu .product-list ul li a {
+  color: #303030;
   background-color: transparent;
   font-size: .8rem;
   font-weight: 400;
@@ -306,6 +308,8 @@ header .toggle-menu .myPay-button a {
 
 #show-product-menu .product-list ul li a:hover {
   background-color: rgba(232, 239, 254, 0.6);
+  padding: .2rem .5rem;
+  border-radius: 10px;
 }
 
 main .banner {
@@ -551,34 +555,40 @@ main .main-container .txt-section .links-section a img {
 }
 
 .article-container .header {
-  background: -webkit-gradient(linear, left top, right top, from(#21254e), color-stop(46%, #2b4e83), to(#00d4ff));
-  background: linear-gradient(90deg, #21254e 0%, #2b4e83 46%, #00d4ff 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(2%, #21254e), color-stop(36%, #2b4e83), to(#00d4ff));
+  background: linear-gradient(90deg, #21254e 2%, #2b4e83 36%, #00d4ff 100%);
   color: #eee;
   padding: 4rem 2rem;
   height: 720px;
 }
 
 .article-container .header h3 {
+  max-width: 968px;
+  margin: auto;
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
 
 .article-container .header p {
   font-size: 1.5rem;
+  max-width: 968px;
+  margin: auto;
 }
 
 .article-container .articles {
-  background-color: #e6f9ff;
+  background-color: rgba(204, 233, 249, 0.43);
   border-radius: 0px 290px 0 0;
   -webkit-box-shadow: 13px 13px 40px #6e7384, -3px -3px 20px #e6f9ff;
           box-shadow: 13px 13px 40px #6e7384, -3px -3px 20px #e6f9ff;
+  padding: 10rem 1rem;
   position: relative;
-  top: -263px;
+  top: -283px;
 }
 
 @media (min-width: 768px) {
   .article-container .articles {
-    padding: 15rem 5rem;
+    max-width: 1280px;
+    margin: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -587,21 +597,19 @@ main .main-container .txt-section .links-section a img {
             justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    max-width: 1280px;
-    margin: auto;
   }
 }
 
 .article-container .articles article {
-  padding: 2.5rem 1rem;
-  max-width: 420px;
+  max-width: 380px;
   height: 300px;
   margin: auto;
   -webkit-box-shadow: 13px 13px 40px #6e7384, -3px -3px 20px #fff;
           box-shadow: 13px 13px 40px #6e7384, -3px -3px 20px #fff;
   border-radius: 0 48px 0 0;
-  margin-bottom: 4rem;
+  margin-top: 4rem;
   background-color: #fff;
+  padding: 2.5rem .7rem;
 }
 
 .article-container .articles article .title {
@@ -614,7 +622,7 @@ main .main-container .txt-section .links-section a img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 1.5rem;
+  margin: 1rem 0;
 }
 
 .article-container .articles article .title h4 {
